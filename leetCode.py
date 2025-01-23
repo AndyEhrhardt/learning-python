@@ -254,6 +254,22 @@ class Solution(object):
                 nums[k] = nums[i]
                 k += 1
         return k
-        
+
+# 28. Find the Index of the First Occurrence in a String
+# REVISIT I THINK THIS IS CHEATING LOL 
+
+class Solution(object):
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        needleIndex = 0
+        startIndex = 0
+        try:
+            return haystack.index(needle)
+        except: 
+            return -1
 
 
