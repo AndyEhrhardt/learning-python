@@ -140,3 +140,88 @@ class Solution(object):
         return longestPrefix
 
 
+
+# 20. Valid Parentheses
+# Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+# An input string is valid if:
+
+# Open brackets must be closed by the same type of brackets.
+# Open brackets must be closed in the correct order.
+# Every close bracket has a corresponding open bracket of the same type.
+ 
+
+# Example 1:
+
+# Input: s = "()"
+
+# Output: true
+
+# Example 2:
+
+# Input: s = "()[]{}"
+
+# Output: true
+
+# Example 3:
+
+# Input: s = "(]"
+
+# Output: false
+
+# Example 4:
+
+# Input: s = "([])"
+
+# Output: true
+
+
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        for i in s:
+            s = s.replace('()', '')
+            s = s.replace('[]', '')
+            s = s.replace("{}", '')
+        return len(s) == 0
+
+
+# REVISIT THIS ONE I DO NOT UNDERSTAND 
+# 21. Merge Two Sorted Lists
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def mergeTwoLists(self, list1, list2):
+        """
+        :type list1: Optional[ListNode]
+        :type list2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        dummy = ListNode()
+        cur = dummy
+        while list1 and list2:
+            print(list1, list1.next)
+            if list1.val > list2.val:
+                cur.next = list2
+                list2 = list2.next
+            else:
+                cur.next = list1
+                list1 = list1.next
+            cur = cur.next
+        if list1:
+            cur.next = list1
+        else:
+            cur.next = list2
+        return dummy.next
+            
+          
+
+            
+
