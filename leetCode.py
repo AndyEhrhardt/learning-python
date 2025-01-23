@@ -223,5 +223,21 @@ class Solution(object):
             
           
 
+
+# 26. Remove Duplicates from Sorted Array
+
+class Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        placeHolder = 1 
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1]:
+                nums[placeHolder] = nums[i]
+                placeHolder += 1
+        return placeHolder
+
             
 
