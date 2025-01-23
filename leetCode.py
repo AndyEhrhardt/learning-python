@@ -272,4 +272,21 @@ class Solution(object):
         except: 
             return -1
 
+# 35. Search Insert Position
+class Solution(object):
+    def searchInsert(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        for i, num in enumerate(nums):
+            if num == target:
+                return i
+            elif i == len(nums) - 1 and target > num:
+                return len(nums)
+            elif i == 0 and target < num:
+                return 0
+            elif num < target and target < nums[i+1]:
+                return i + 1
 
