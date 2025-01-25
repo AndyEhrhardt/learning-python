@@ -303,7 +303,6 @@ class Solution(object):
         return len(sArr[len(sArr) - 1])
 
 # 66. Plus One
-
 class Solution(object):
     def plusOne(self, digits):
         """
@@ -318,3 +317,21 @@ class Solution(object):
             digits[i] = 0
             if i == 0:
                 return [1] + digits
+
+
+
+# return to this an use binary search to solve 
+# 69. Sqrt(x) 
+class Solution(object):
+    def mySqrt(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        i = 0
+        while i <= x:
+            if i * i == x: 
+                return i
+            if i * i > x:
+                return i - 1
+            i += 1
