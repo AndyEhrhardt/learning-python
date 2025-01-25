@@ -290,3 +290,14 @@ class Solution(object):
             elif num < target and target < nums[i+1]:
                 return i + 1
 
+
+# 58. Length of Last Word
+
+class Solution(object):
+    def lengthOfLastWord(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        sArr = s.split()
+        return len(sArr[len(sArr) - 1])
